@@ -1,534 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Shashank Prasanna Kumar</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Data Analyst" name="keywords">
-        <meta content="Project Manager" name="description">
-        <meta content="Operations Analyst" name="description">
+<head>
+    <meta charset="UTF-8">
+    <title>Shashank Prasanna Kumar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts for Professional Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Main CSS -->
+    <style>
+        :root {
+            --primary: #4169e1;
+            --secondary: #181c25;
+            --bg: #f8f9fa;
+            --card-bg: #fff;
+            --text-main: #181c25;
+            --text-light: #60697b;
+            --border: #e4e6ea;
+            --shadow: 0 8px 24px rgba(65,105,225,0.05), 0 1.5px 4px rgba(0,0,0,0.06);
+            --radius: 18px;
+        }
 
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
 
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        a:hover {
+            color: #2141a3;
+        }
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+        /* NAVBAR */
+        .navbar {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            padding: 0.7rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .navbar-brand {
+            font-family: 'Merriweather Sans', 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .navbar-nav {
+            display: flex;
+            gap: 1.8rem;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--secondary);
+            font-size: 1rem;
+            position: relative;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: var(--primary);
+        }
 
-    <body data-spy="scroll" data-target=".navbar" data-offset="51">
-        <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-light navbar-light">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">Shashank</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        /* HERO */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            padding: 3.5rem 1rem 2rem 1rem;
+            background: linear-gradient(120deg, #eaf0fa 65%, #f8f9fa 100%);
+            box-shadow: var(--shadow);
+        }
+        .hero-img {
+            flex: 0 0 180px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(65,105,225,0.13);
+            border: 5px solid #fff;
+        }
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-content {
+            max-width: 540px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+        .hero-content h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 0 0 0.7rem 0;
+            letter-spacing: 0.5px;
+        }
+        .hero-content h2, .hero-content .typed-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
-                        <a href="#home" class="nav-item nav-link active">Home</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
-                        <a href="#experience" class="nav-item nav-link">Experience</a>
-                        <a href="#skills" class="nav-item nav-link">Skills</a>
-                        <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
-                        <a href="#certifications" class="nav-item nav-link">Certifications</a>
-                    </div>
-                </div>
-            </div>
+        /* SECTION LAYOUT */
+        section, .card-section {
+            max-width: 1020px;
+            margin: 2rem auto;
+            padding: 2.5rem 2.2rem;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .section-header {
+            font-family: 'Merriweather Sans', 'Inter', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            border-left: 6px solid var(--primary);
+            padding-left: 0.7rem;
+        }
+
+        /* ABOUT */
+        .about-text p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+        .about-btn {
+            margin-top: 1.2rem;
+        }
+        .about-btn a {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(65,105,225,0.08);
+        }
+        .about-btn a:hover {
+            background: #21387e;
+        }
+
+        /* TIMELINE (EDUCATION & EXPERIENCE) */
+        .timeline-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.3rem;
+            margin-bottom: 2.2rem;
+        }
+        .timeline-icon {
+            color: var(--primary);
+            font-size: 1.7rem;
+            min-width: 40px;
+        }
+        .timeline-content {
+            background: #f4f6fb;
+            border-radius: 12px;
+            padding: 1rem 1.4rem;
+            box-shadow: 0 2px 8px rgba(65,105,225,0.06);
+            border-left: 4px solid var(--primary);
+            flex: 1;
+        }
+        .timeline-content h3 {
+            margin: 0 0 0.1rem 0;
+            color: var(--secondary);
+            font-size: 1.18rem;
+            font-weight: 700;
+        }
+        .timeline-content h4 {
+            font-size: 1.01rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0.12rem 0 0.5rem 0;
+        }
+        .timeline-content .timeline-date {
+            font-size: 0.98rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .timeline-content p, .timeline-content ul {
+            margin: 0.3rem 0 0 0;
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .timeline-content ul {
+            padding-left: 1.2rem;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .skills-list {
+            background: #f4f6fb;
+            border-radius: 10px;
+            padding: 1.3rem 1.4rem;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(65,105,225,0.04);
+        }
+        .skills-list strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .skills-list span, .skills-list b {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        .skills-list p {
+            margin: 0.5rem 0;
+            color: var(--text-main);
+            font-size: 1.03rem;
+        }
+
+        /* PORTFOLIO */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-card {
+            background: #f4f6fb;
+            border-radius: 13px;
+            box-shadow: 0 2px 8px rgba(65,105,225,0.06);
+            border-left: 4px solid var(--primary);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .portfolio-img {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.25s;
+        }
+        .portfolio-card:hover .portfolio-img img {
+            transform: scale(1.06);
+        }
+        .portfolio-content {
+            padding: 1rem 1.2rem;
+            flex: 1;
+        }
+        .portfolio-content h5 {
+            color: var(--secondary);
+            font-size: 1.16rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+        .portfolio-content p {
+            color: var(--text-light);
+            font-size: 0.97rem;
+            margin-bottom: 0.3rem;
+        }
+        .portfolio-content .btn {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.55rem 1.1rem;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 6px;
+            font-size: 0.99rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(65,105,225,0.08);
+        }
+        .portfolio-content .btn:hover {
+            background: #21387e;
+        }
+
+        /* CERTIFICATIONS */
+        .certifications-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            justify-content: flex-start;
+        }
+        .cert-card {
+            background: #f4f6fb;
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 2px 8px rgba(65,105,225,0.04);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 290px;
+            max-width: 400px;
+            margin-bottom: 0.7rem;
+        }
+        .cert-img img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 6px;
+            background: #fff;
+            border: 1px solid var(--border);
+        }
+        .cert-info h5 {
+            margin: 0 0 0.1rem 0;
+            color: var(--secondary);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .cert-info p {
+            margin: 0;
+            font-size: 0.97rem;
+            color: var(--primary);
+        }
+
+        /* ROLES & ACHIEVEMENTS */
+        .roles-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .role-card {
+            background: #f4f6fb;
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.2rem;
+            box-shadow: 0 2px 8px rgba(65,105,225,0.05);
+        }
+        .role-card h4 {
+            color: var(--primary);
+            font-size: 1.06rem;
+            margin-bottom: 0.18rem;
+            font-weight: 700;
+        }
+        .role-card p {
+            margin-bottom: 0.32rem;
+            color: var(--text-light);
+        }
+        .role-card ul {
+            padding-left: 1.1rem;
+            margin: 0;
+        }
+        .role-card li {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 0.18rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 3.5rem;
+            padding: 2.1rem 1rem 1rem 1rem;
+            background: var(--primary);
+            color: #fff;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-info h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.1rem;
+        }
+        .footer-info h3 {
+            color: #dbe3f8;
+            margin-bottom: 0.6rem;
+            font-size: 1.11rem;
+            font-weight: 500;
+        }
+        .footer-menu {
+            color: #e3e6f6;
+            font-size: 1.09rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+        }
+        .footer-social a {
+            margin-right: 1rem;
+            color: #e2e6ff;
+            font-size: 1.3rem;
+            transition: color 0.18s;
+        }
+        .footer-social a:hover {
+            color: #fff;
+        }
+        .footer-copyright {
+            text-align: center;
+            color: #b6c3e9;
+            font-size: 0.97rem;
+            margin-top: 1.2rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 750px) {
+            .navbar {
+                padding: 1rem 1rem;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            section, .card-section {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero {
+                flex-direction: column;
+                padding: 2rem 0.5rem 1rem 0.5rem;
+                gap: 1.7rem;
+            }
+        }
+        @media (max-width: 530px) {
+            .hero-img {
+                width: 130px;
+                height: 130px;
+            }
+            .section-header {
+                font-size: 1.33rem;
+            }
+            .footer {
+                font-size: 0.95rem;
+                padding: 1rem 0.1rem 0.7rem 0.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <span class="navbar-brand">Shashank</span>
+        <div class="navbar-nav">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#experience">Experience</a>
+            <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+            <a class="nav-link" href="#certifications">Certifications</a>
+            <a class="nav-link" href="#contact">Contact</a>
         </div>
-        <!-- Nav Bar End -->
+    </nav>
 
-
-        <!-- Hero Start -->
-        <div class="hero" id="home">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="hero-content">
-                            <div class="hero-text">
-                                <p>Hey, I'm</p>
-                                <h1>Shashank Prasanna Kumar</h1>
-                                <h2></h2>
-                                <div class="typed-text">Project Manager, Data Analyst, Operations Analyst, Business Consultant </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 d-none d-md-block">
-                        <div class="hero-image">
-                            <img src="img/sonu.jpg" alt="Hero Image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-img">
+            <img src="img/sonu.jpg" alt="Shashank Prasanna Kumar">
         </div>
-        <!-- Hero End -->
-
-
-        <!-- About Start -->
-        <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="img/About.jpg" alt="Image">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-header text-left">
-                                <p>About Me</p>
-                                <h2>3+ Years Experience</h2>
-                            </div>
-                            <div class="about-text">
-                                <p>
-                                    Dynamic and results-oriented professional with 4+ years of experience across technology and retail sectors, delivering data-driven solutions and managing complex projects that drive measurable business impact. I hold a Master’s degree in Management Information Systems from the University of Illinois at Chicago, with a strong foundation in data engineering, analytics, and business intelligence.
-                                </p>
-                                <p>
-                                    Proficient in tools and languages such as Python, SQL, Tableau, and Power BI, I specialize in transforming raw data into strategic insights that inform decision-making. My background includes optimizing supply chain processes, driving cost-saving initiatives, and collaborating with cross-functional teams in product, engineering, and business domains.
-                                </p>
-                                <p>
-                                    I bring strong communication and problem-solving skills, with a proven ability to align technical strategies with business goals. Passionate about continuous learning, I’m currently seeking opportunities in roles such as Data Analyst, Business Intelligence Analyst, Business Consultant, Data Engineer, or IT Business Analyst.
-                                </p>
-                                <br>
-                            </div>
-                            <a class="btn" target="_blank" href="https://www.linkedin.com/in/shashank-prasannakumar/">Know Me More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-content">
+            <p>Hey, I'm</p>
+            <h1>Shashank Prasanna Kumar</h1>
+            <div class="typed-text">Project Manager, Data Analyst, Operations Analyst, Business Consultant</div>
         </div>
-        <!-- About End -->
-        
-        
-       <!-- Service Start -->
-<div class="service" id="service">
-    <div class="container">
-        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>Where Business Strategy Meets Data-Driven Solutions</p>
-            <h2>Interests & Aspirations</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.0s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fa fa-lightbulb-o"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>Business Intelligence</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fa fa-database"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>Data Engineering</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fa fa-bar-chart"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>Data Analysis & Visualization</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fa fa-cogs"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>Process Optimization</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.8s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fa fa-line-chart"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>Product & Business Strategy</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow fadeInUp" data-wow-delay="1.0s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fa fa-comments-o"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>IT & Data Consulting</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Service End -->
+    </section>
 
-        
-        
-         <!-- Experience Start -->
-<!-- Experience Start -->
-<div class="experience" id="experience">
-    <div class="container">
-        <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <h2>Education & Experience</h2>
-        </header>
-        <div class="timeline">
+    <!-- About -->
+    <section id="about">
+        <div class="section-header">About Me</div>
+        <div class="about-text">
+            <p>Dynamic and results-oriented professional with 4+ years of experience across technology and retail sectors, delivering data-driven solutions and managing complex projects that drive measurable business impact. I hold a Master’s degree in Management Information Systems from the University of Illinois at Chicago, with a strong foundation in data engineering, analytics, and business intelligence.</p>
+            <p>Proficient in tools and languages such as Python, SQL, Tableau, and Power BI, I specialize in transforming raw data into strategic insights that inform decision-making. My background includes optimizing supply chain processes, driving cost-saving initiatives, and collaborating with cross-functional teams in product, engineering, and business domains.</p>
+            <p>I bring strong communication and problem-solving skills, with a proven ability to align technical strategies with business goals. Passionate about continuous learning, I’m currently seeking opportunities in roles such as Data Analyst, Business Intelligence Analyst, Business Consultant, Data Engineer, or IT Business Analyst.</p>
+        </div>
+        <div class="about-btn">
+            <a href="https://www.linkedin.com/in/shashank-prasannakumar/" target="_blank">Know Me More</a>
+        </div>
+    </section>
 
-            <!-- Education - Left -->
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">Aug, 2023 - May, 2025*</div>
-                    <h2>University of Illinois Chicago</h2>
+    <!-- Experience & Education -->
+    <section id="experience">
+        <div class="section-header">Education & Experience</div>
+        <ul class="timeline-list">
+            <!-- Education -->
+            <li class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug, 2023 - May, 2025*</span>
+                    <h3>University of Illinois Chicago</h3>
                     <h4>Master's degree, Management Information Systems</h4>
-                    <p>• CGPA: 3.91/4.0</p>
+                    <p>CGPA: 3.91/4.0</p>
                 </div>
-            </div>
-
-            <!-- Business Data Analyst - Right -->
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">Jun, 2024 - Present</div>
-                    <h2>UI Health</h2>
+            </li>
+            <!-- Experience Items -->
+            <li class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jun, 2024 - Present</span>
+                    <h3>UI Health</h3>
                     <h4>Business Data Analyst</h4>
-                    <p>
-                        • Optimizing supply chain, warehouse operations, finance, and purchasing processes by gathering business requirements and applying analytical solutions.<br>
-                        • Delivered actionable insights via reporting and visualization to support high-quality patient care and operational efficiency.
-                    </p>
+                    <p>Optimizing supply chain, warehouse operations, finance, and purchasing processes by gathering business requirements and applying analytical solutions.<br>
+                    Delivered actionable insights via reporting and visualization to support high-quality patient care and operational efficiency.</p>
                 </div>
-            </div>
-
-            <!-- Business System Analyst - Left -->
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">Nov, 2023 - May, 2024</div>
-                    <h2>UI Health</h2>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Nov, 2023 - May, 2024</span>
+                    <h3>UI Health</h3>
                     <h4>Business System Analyst</h4>
-                    <p>
-                        • Executed SQL queries in Access Database to support data reporting needs.<br>
-                        • Streamlined inventory by managing PAR EX Bins and enhancing supply chain responsiveness.<br>
-                        • Created dynamic dashboards with Python, Excel, and MS Access to support user-specific reporting requirements.
-                    </p>
+                    <p>Executed SQL queries in Access Database to support data reporting needs.<br>
+                    Streamlined inventory by managing PAR EX Bins and enhancing supply chain responsiveness.<br>
+                    Created dynamic dashboards with Python, Excel, and MS Access to support user-specific reporting requirements.</p>
                 </div>
-            </div>
-
-            <!-- Graduate TA - Right -->
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">Aug, 2023 - May, 2024</div>
-                    <h2>University of Illinois Chicago</h2>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug, 2023 - May, 2024</span>
+                    <h3>University of Illinois Chicago</h3>
                     <h4>Graduate Teaching Assistant</h4>
-                    <p>
-                        • Supported students through lab sessions and assignment evaluations.<br>
-                        • Maintained Blackboard for effective course communication and resource delivery.
-                    </p>
+                    <p>Supported students through lab sessions and assignment evaluations.<br>
+                    Maintained Blackboard for effective course communication and resource delivery.</p>
                 </div>
-            </div>
-
-            <!-- Infosys - Left -->
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">Nov, 2021 - Dec, 2022</div>
-                    <h2>Infosys</h2>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Nov, 2021 - Dec, 2022</span>
+                    <h3>Infosys</h3>
                     <h4>Functional Consultant</h4>
-                    <p>
-                        • Improved application performance by 25% and reduced client issues through collaboration with consultants and developers.<br>
-                        • Created functional specification documents for multiple projects, reducing scope creep by 90%.<br>
-                        • Led issue resolution efforts across teams, halving turnaround time.
-                    </p>
+                    <p>Improved application performance by 25% and reduced client issues through collaboration with consultants and developers.<br>
+                    Created functional specification documents for multiple projects, reducing scope creep by 90%.<br>
+                    Led issue resolution efforts across teams, halving turnaround time.</p>
                 </div>
-            </div>
-
-            <!-- Flipkart - Right -->
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">Jul, 2019 - Sep, 2021</div>
-                    <h2>Flipkart</h2>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jul, 2019 - Sep, 2021</span>
+                    <h3>Flipkart</h3>
                     <h4>Operations Analyst</h4>
-                    <p>
-                        • Consolidated stakeholder input to streamline project planning and reduce timelines by 30%.<br>
-                        • Created KPI reports, performed RCA, and visualized OKRs using Tableau, improving last-mile and warehouse operations by 97%.<br>
-                        • Conducted audits to maintain minimal defects per million opportunities (DPMO).
-                    </p>
+                    <p>Consolidated stakeholder input to streamline project planning and reduce timelines by 30%.<br>
+                    Created KPI reports, performed RCA, and visualized OKRs using Tableau, improving last-mile and warehouse operations by 97%.<br>
+                    Conducted audits to maintain minimal defects per million opportunities (DPMO).</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="section-header">Expertise & Proficiencies</div>
+        <div class="skills-grid">
+            <div class="skills-list"><strong>Programming Languages:</strong> <span>Java, Python, SQL, JavaScript, XML, Unix, TypeScript, Scala</span></div>
+            <div class="skills-list"><strong>Web Technologies:</strong> <span>HTML, CSS, PHP, Spring Boot, Bootstrap, Django, Angular.js, React, JQuery</span></div>
+            <div class="skills-list"><strong>Database Technologies:</strong> <span>MySQL, Postgresql, Oracle RDBMS, MS Access, MongoDB, Microsoft SQL Server</span></div>
+            <div class="skills-list"><strong>Cloud Technologies:</strong> <span>Amazon (RDS, Lambda, S3, API Gateway, DynamoDB, ECS), Azure DevOps, App Services, CI/CD</span></div>
+            <div class="skills-list"><strong>Tools & Frameworks:</strong> <span>Tableau, Power BI, Looker, dbt, Git, Jira, Apache Spark, Hadoop, Kafka, Snowflake, BigQuery</span></div>
+            <div class="skills-list"><strong>Product & Project Management:</strong> <span>Agile, Scrum, Kanban, Jira, Confluence, Product Roadmap, Lifecycle Mgmt, Feature Prioritization, GTM Strategy</span></div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <div class="section-header">Portfolio of Projects</div>
+        <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="img/skywest.jpeg" alt="SkyWest Airlines Performance Analysis">
+                </div>
+                <div class="portfolio-content">
+                    <h5>SkyWest Airlines Performance Analysis</h5>
+                    <p>Analyzed KPIs like on-time performance, flight efficiency, and customer satisfaction with Tableau, creating detailed visualizations. Developed dashboards for real-time tracking of KPIs (150K+ records), used Excel pivot tables for trend analysis.</p>
                 </div>
             </div>
-
-        </div>
-    </div>
-</div>
-<!-- Experience End -->
-
-        <!-- Job Experience End -->
-        
-        <div class="skills" id="skills">
-            <div class="container" style="margin-top: 80px;">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Skills</p>
-                    <h2>Expertise and Proficiencies</h2>
+            <!-- Project 2 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="img/hms.jpeg" alt="Hospital Management">
                 </div>
-                <div class="skills-container" style="color: black;">
-                    <p>• <b>Programming Languages</b> : Java, Python, SQL, JavaScript, XML, Unix, TypeScript, Scala</p>
-                    <p>• <b>Web Technologies</b> : HTML, CSS, PHP, Spring Boot, Bootstrap, Django, Angular.js, React, JQuery</p>
-                    <p>• <b>Database Technologies</b> : MySQL, Postgresql, Oracle RDBMS, MS access, MongoDB, Microsoft SQL Server</p>
-                    <p>• <b>Cloud Technologies</b> : Amazon (RDS, Lambda, S3, API Gateway, DynamoDB, ECS), Azure DevOps, App Services, CI/CD </p>
-                    <p>• <b>Tools and FrameWorks</b> : Tableau, Power BI, Looker, dbt, Git, Jira, Apache Spark, Hadoop, Kafka, Snowflake, BigQuery</p>
-                    <p>• <b>Product & Project Management</b> : Agile Methodologies, Scrum, Kanban, Jira, Confluence, Product Roadmap Development, Product Lifecycle Management, Feature Prioritization, Go-to-Market Strategy</p>
+                <div class="portfolio-content">
+                    <h5>Hospital Management</h5>
+                    <p>Built interactive web pages with HTML, CSS, JS, Bootstrap. Used Spring Boot for backend, deployed on AWS EC2 with RDS. Designed DB schemas for 100K+ records with Hibernate/JPA ORM.</p>
+                    <a class="btn" target="_blank" href="https://github.com/TejaSrikanthReddyB">View</a>
                 </div>
             </div>
-        </div>
-
-
-        <!-- Portfolio Start -->
-        <div class="portfolio" id="portfolio">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Portfolio of Projects</p>
-                    <h2>From Concept to Completion – Projects That Make a Difference</h2>
+            <!-- Project 3 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="img/imagecaption.jpeg" alt="Image Caption Generator">
                 </div>
-                <div class="row portfolio-container">
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp"  style="margin-top: 10px;"  data-wow-delay="0.0s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/skywest.jpeg" alt="Image">
-                            </div>
-                            <div class="timeline-text" style="margin-top: 10px;">
-                                <h5>SkyWest Airlines Performance Analysis</h5>
-                                <p>• Analyzed key performance indicators (KPIs) including on-time performance, flight efficiency, and customer satisfaction using Tableau to create detailed and impactful visualizations.</p>
-                                <p>• Developed interactive dashboards for real-time tracking of KPIs, managing and analyzing data sets of over 150K records.</p>
-                                <p>• Leveraged advanced Excel functionalities and pivot tables to perform in-depth data exploration, facilitating detailed performance evaluations and trend analysis.</p>
-                                <a class="btn" target="_blank" href="https://github.com/TejaSrikanthReddyB">View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp"  style="margin-top: 10px;"  data-wow-delay="0.0s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/hms.jpeg" alt="Image">
-                            </div>
-                            <div class="timeline-text" style="margin-top: 10px;">
-                                <h5>Hospital Management</h5>
-                                <p>• Crafted professional-grade, responsive, and interactive web pages using HTML, CSS, JavaScript, and Bootstrap, ensuring a seamless user experience.</p>
-                                <p>• Employed Spring Boot’s advanced features, including Dependency Injection, to streamline application setup and configuration, significantly enhancing efficiency. Deployed the system on AWS EC2 and integrated with Amazon RDS for optimal performance.</p>
-                                <p>• Designed and maintained complex database schemas and applied ORM techniques using Hibernate and JPA, effectively managing data across 100K+ records.</p>
-                            </div>
-                            <a class="btn" style="margin-top: 10px;" target="_blank" href="https://github.com/TejaSrikanthReddyB">View</a>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp"  style="margin-top: 10px;"  data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/imagecaption.jpeg" alt="Image">
-                            </div>
-                            <div class="timeline-text" style="margin-top: 10px;">
-                                <h5>Image Caption Generator</h5>
-                                <p>• Designed and implemented a sophisticated image caption generator that integrates Convolutional Neural Networks (CNN) and Recurrent Neural Networks (RNN) to produce accurate and contextually relevant descriptions.</p>
-                                <p>• Leveraged the Flickr 8k dataset for rigorous training, enabling the model to proficiently identify objects in diverse images and generate captions in various languages.</p>
-                                <a class="btn" target="_blank" href="https://github.com/TejaSrikanthReddyB">View</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="portfolio-content">
+                    <h5>Image Caption Generator</h5>
+                    <p>Developed a model using CNN+RNN for multi-language image captions, trained on Flickr 8k dataset, enabling object identification and contextual description generation.</p>
                 </div>
-                <div class="row portfolio-container" style="margin-top: 40px;">
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp"  style="margin-top: 10px;"  data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/auction.jpeg" alt="Image">
-                            </div>
-                            <div class="timeline-text" style="margin-top: 10px;">
-                                <h5>VITCAA : VIT CYCLE AUCTION AUTHORITY</h5>
-                                <p>• Designed and implemented VITCAA, an online auction platform for VIT students to buy and sell cycles, contributing to the reduction of unused cycles on campus and generating income for students.</p>
-                                <p>• Built the platform using Visual Studio Code, MongoDB, Node.js with Express.js, and front-end technologies such as HTML, CSS, JavaScript, and jQuery to create a user-friendly and flexible auction system</p>
-                                <p>• Streamlined the cycle auction process by creating modules for buyer and seller registration, auction participation, and automated report generation to enhance transparency and efficiency.</p>
-                                <a class="btn" target="_blank" href="https://github.com/TejaSrikanthReddyB">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp"  style="margin-top: 10px;"  data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/vitkart.jpeg" alt="Image">
-                            </div>
-                            <div class="timeline-text" style="margin-top: 10px;">
-                                <h5>VITkart</h5>
-                                <p>• Created a user-friendly, web-based solution for VIT-goers to access quality-guaranteed stationery products.</p>
-                                <p>• Prioritized locally based service and community responsibility, offering an eco-friendly, accessible purchasing experience.</p>
-                                <p>• Leveraged technologies such as PHP, MySQL, JavaScript, and Bootstrap to develop a scalable and responsive e-commerce platform, ensuring smooth transactions and a high-quality user interface.</p>
-                            </div>
-                            <a class="btn" style="margin-top: 60px;" target="_blank" href="https://github.com/TejaSrikanthReddyB">View</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" style="margin-top: 10px;" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/couriermanagement.jpeg" alt="Image">
-                            </div>
-                            <div class="timeline-text" style="margin-top: 10px;">
-                                <h5>Courier Management System</h5>
-                                <p>• Designed and developed a Courier Management System using PHP, MySQL, Apache on XAMPP, focused on an admin portal for managing courier bookings, parcel tracking, and reporting, with a customer-facing status check feature.</p>
-                                <p>• Built an admin dashboard to streamline operations, enabling efficient management of shipment records, office details, and real-time parcel tracking, enhancing operational control and data transparency.</p>
-                                <p>• Integrated a customer-facing status check option that allowed customers to track parcel delivery status using a unique product ID, improving user satisfaction with real-time updates.</p>
-                                <a class="btn" target="_blank" href="https://github.com/TejaSrikanthReddyB">View</a>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="img/auction.jpeg" alt="VITCAA Auction">
+                </div>
+                <div class="portfolio-content">
+                    <h5>VITCAA: VIT Cycle Auction Authority</h5>
+                    <p>Online auction for students to buy/sell cycles. Built with Node.js, MongoDB, Express, HTML/CSS/JS, automating buyer/seller registration and transparent report generation.</p>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="img/vitkart.jpeg" alt="VITkart">
+                </div>
+                <div class="portfolio-content">
+                    <h5>VITkart</h5>
+                    <p>Developed a user-friendly e-commerce platform for eco-friendly stationery, using PHP, MySQL, JS, and Bootstrap for scalable, accessible, and local-first shopping.</p>
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="portfolio-card">
+                <div class="portfolio-img">
+                    <img src="img/couriermanagement.jpeg" alt="Courier Management System">
+                </div>
+                <div class="portfolio-content">
+                    <h5>Courier Management System</h5>
+                    <p>Built admin dashboard & customer-facing tracking using PHP/MySQL/XAMPP; streamlined bookings, tracking, and operational reporting for a courier company.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="certifications" id="certifications">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Certifications</p>
-                    <h2>Professional Certifications and Achievements</h2>
+    <!-- Certifications -->
+    <section id="certifications">
+        <div class="section-header">Professional Certifications</div>
+        <div class="certifications-grid">
+            <div class="cert-card">
+                <div class="cert-img"><img src="img/cspo.png" alt="CSPO"></div>
+                <div class="cert-info">
+                    <a href="https://bcert.me/bc/html/show-badge.html?b=icswcbii" target="_blank"><h5>Certified Scrum Product Owner</h5></a>
+                    <p>Scrum Alliance, Inc.</p>
                 </div>
-                <div class="row certification-container">
-                    <div class="col-lg-4 col-md-6 col-sm-12 certification-item wow fadeInUp" style="margin-top: 10px;" data-wow-delay="0.0s">
-                        <div class="certification-wrap">
-                            <div class="certification-img">
-                                <img src="img/cspo.png" alt="Certification Logo">
-                            </div>
-                            <div class="certification-text" style="margin-top: 10px;">
-                                <a href="https://bcert.me/bc/html/show-badge.html?b=icswcbii" target="_blank"><h5>Certified Scrum Product Owner</h5></a>
-                                <p>Scrum Alliance, Inc.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 certification-item wow fadeInUp" style="margin-top: 10px;" data-wow-delay="0.0s">
-                        <div class="certification-wrap">
-                            <div class="certification-img">
-                                <img src="img/aws.jpeg" alt="Certification Logo">
-                            </div>
-                            <div class="certification-text" style="margin-top: 10px;">
-                                <a href="https://www.credly.com/badges/d923606f-4b06-47d5-9190-58d7da105b2d/public_url" target="_blank"><h5>AWS Academy Graduate - AWS Academy Cloud Security Builder</h5></a>
-                                <p>Amazon Web Services (AWS)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 certification-item wow fadeInUp" style="margin-top: 10px;" data-wow-delay="0.2s">
-                        <div class="certification-wrap">
-                            <div class="certification-img">
-                                <img src="img/aws.jpeg" alt="Certification Logo">
-                            </div>
-                            <div class="certification-text" style="margin-top: 10px;">
-                                <a href="https://www.credly.com/badges/736ecf00-2e74-422c-9016-4aac353c729a/public_url" target="_blank"><h5>AWS Academy Graduate - AWS Academy Data Engineering</h5></a>
-                                <p>Amazon Web Services (AWS)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more certification items as needed -->
+            </div>
+            <div class="cert-card">
+                <div class="cert-img"><img src="img/aws.jpeg" alt="AWS"></div>
+                <div class="cert-info">
+                    <a href="https://www.credly.com/badges/d923606f-4b06-47d5-9190-58d7da105b2d/public_url" target="_blank"><h5>AWS Academy Cloud Security Builder</h5></a>
+                    <p>Amazon Web Services (AWS)</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-img"><img src="img/aws.jpeg" alt="AWS"></div>
+                <div class="cert-info">
+                    <a href="https://www.credly.com/badges/736ecf00-2e74-422c-9016-4aac353c729a/public_url" target="_blank"><h5>AWS Academy Data Engineering</h5></a>
+                    <p>Amazon Web Services (AWS)</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Roles and Responsibilities and Achievements Start -->
-        <div class="roles-responsibilities-achievements wow fadeIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Roles and Responsibilities</p>
-                    <h2>Positions and Achievements</h2>
-                </div>
-                <div class="role-item">
-                    <h4>Liautaud Scholar</h4>
-                    <p>University of Illinois Chicago</p>
-                    <ul>
-                        <li>Issued by UIC Business Liautaud Graduate School · Jul 2024</li>
-                  </ul>
-                </div>
-                <br>
-                <div class="role-item">
-                    <h4>Vice chairperson</h4>
-                    <p>IEEE IAS, VIT - Jan 2018 to Apr 2020</p>
-                    <ul>
-                        <li>Served as the Vice President of the IEEE student chapter, leading strategic initiatives that expanded membership from 34 to over 200 through engaging workshops, technical events, and impactful outreach efforts.</li>
-                        <li>Spearheaded the planning and execution of numerous classroom sessions and large-scale workshops, ensuring high participation by curating content that resonated with students and professionals alike</li>
-                        <li>Played a pivotal role in the IEEE International Conference on Emerging Trends in Information Technology and Engineering (ic-ETITE'20) as the Student Organizer and Master of Ceremony, overseeing event coordination, website development, and seamless conference operations from inception to execution.</li>
-                    </ul>
-                </div>
-                <br>
-                <div class="role-item">
-                    <h4>Core Committee Member</h4>
-                    <p>LEO NGO, VIT - Jan 2018 to May 2020</p>
-                    <ul>
-                        <li>Led and managed initiatives in healthcare, elder care, child welfare, and disability support, ensuring efficient resource allocation and impactful community engagement.</li>
-                        <li>Conducted demographic and needs assessments to strategically plan and distribute essential goods and educational resources to underserved children, enhancing program efficiency.</li>
-                        <li>Designed and delivered structured math tutoring sessions for children, leveraging data analysis to tailor lessons based on student proficiency levels.</li>
-                    </ul>
-                </div>
-
-                <!-- Add more role items as needed -->
+    <!-- Roles & Achievements -->
+    <section>
+        <div class="section-header">Roles & Achievements</div>
+        <div class="roles-list">
+            <div class="role-card">
+                <h4>Vice Chairperson</h4>
+                <p>Society of Mechanical Engineers (SME), Ramaiah Institute of Technology </p>
+                <ul>
+                    <li>Led the IEEE student chapter, expanding membership from 34 to 200+ via workshops and outreach.</li>
+                    <li>Planned & hosted major events, including international conferences, from concept to execution.</li>
+                </ul>
+            </div>
+            <div class="role-card">
+                <h4>Core Committee Member</h4>
+                <p>National Service scheme (NSS)</p>
+                <ul>
+                    <li>Led initiatives in healthcare, elder care, child welfare, and disability support, maximizing impact and resource allocation.</li>
+                    <li>Designed and delivered math tutoring sessions, using data analysis for tailored instruction.</li>
+                </ul>
             </div>
         </div>
+    </section>
 
-        <!-- Footer Start -->
-        <div id="contact" class="footer wow fadeIn" data-wow-delay="0.3s">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="footer-info">
-                        <h2>Teja Reddy Burri</h2>
-                        <h3>University of Illinois, Chicago</h3>
-                        <div class="footer-menu">
-                            <p>+1 (773) 640-2257</p>
-                            <!-- <p>tejasrikanthreddyb@gmail.com</p> -->
-                        </div>
-                        <div class="footer-social">
-                            <a href="mailto:tejasrikanthreddyb@gmail.com"><i class="fa fa-envelope"></i></a>
-                            <a href="https://github.com/TejaSrikanthReddyB"><i class="fa fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/tejareddyb/"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container copyright">
-                    <p>&copy; <a href="#">Teja Reddy 2024</a> <br><a style="opacity: 1%;" href="https://htmlcodex.com">| Designed By HTML Codex</a></p>
-                </div>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-info">
+            <h2>Shashank Prasanna Kumar</h2>
+            <h3>University of Illinois, Chicago</h3>
+            <div class="footer-menu">
+                <span>+1 (240) 308-3379</span>
+            </div>
+            <div class="footer-social">
+                <a href="mailto:shashankp.518.sps@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/shashank-prasannakumar/"><i class="fa fa-linkedin"></i></a>
             </div>
         </div>
-        <!-- Footer End -->
-        
-        
-        <!-- Back to top button -->
-        <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
-        
-        
-        <!-- Pre Loader -->
-        <div id="loader" class="show">
-            <div class="loader"></div>
+        <div class="footer-copyright">
+            &copy; Shashank Prasanna Kumar 2025<br>
         </div>
-
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    </footer>
+</body>
 </html>
