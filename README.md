@@ -1,2 +1,2 @@
-# TejaSrikanthReddyB.github.io
+# Shashank.github.io
 Personal Portfolio
