@@ -1,1 +1,2 @@
-# Sonu_Portfolio
+# TejaSrikanthReddyB.github.io
+Personal Portfolio
